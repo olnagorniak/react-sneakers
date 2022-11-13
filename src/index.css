@@ -43,7 +43,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
-  
+}
+
+* {
+	font-family: 'Inter';
 }
 
 .wrapper {
@@ -53,6 +56,8 @@ body {
 	max-width: 1080px;
 	margin: 50px auto;
 }
+
+
 
 /*-----HEADER------*/
 
@@ -81,22 +86,51 @@ header .headerLeft img {
 
 header .headerRight {
 	display: flex;
+	align-items: center;
 }
 header .headerRight li {
 	margin-right: 30px;
 }
 
+header .headerRight span {
+	display: inline-block;
+	text-align: center;
+}
+header .headerRight li:first-child{
+	display: flex;
+	align-items: center;
+}
+
 .content {
 	padding: 20px;
-}
-.content h1 {
-	margin: 0 0 40px 0;
 }
 
 
 /*---------------*/
 
 /*------Content------*/
+.content .allSneakers {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 40px 0;
+}
+.search-block{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border: 1px solid #F3F3F3;
+	border-radius: 10px;
+	padding: 0 15px;
+}
+.search-block img {
+	display: inline-block;
+}
+.search-block input {
+	display: inline-block;
+	color: #C4C4C4;
+	padding: 13px;
+}
 
 .sneakers {
 	display: flex;
@@ -108,6 +142,16 @@ width: 210px;
 border: 1px solid #F3F3F3;
 border-radius: 40px;
 padding: 20px;
+transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.card:hover{
+	box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04);
+	transform: translateY(-5px);
+}
+
+.favorite {
+	position: absolute;
+	cursor: pointer;
 }
 .card p {
 	margin: 0 0 7px 0;
@@ -140,6 +184,132 @@ padding: 20px;
 	border: 1px solid #F2F2F2;
 	border-radius: 8px;
 }
+
+/*----basket----*/
+.bigShadow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+}
+.drawer{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 380px;
+	height: 100%;
+	right: 0;
+	background: #FFFFFF;
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+}
+
+.drawer h2 {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 30px 0;
+}
+.items {
+	flex: 1 1 auto;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+.totalPrise{
+	flex: 0 1 auto;
+}
+.basketInto{
+	display: flex;
+	align-items: center;
+	width: 325px;
+height: 119px;
+padding: 20px 20px 29px 20px;
+background: #FFFFFF;
+border: 1px solid #F3F3F3;
+border-radius: 20px;
+margin: 0 0 20px 0;
+}
+.basketInto img, p, span {
+	display: inline-block;
+}
+.basketIntoPrise{
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	padding: 0 20px;
+}
+.basketIntoPrise p {
+	margin: 0 0 10px 0;	
+	line-height: 17px;
+}
+.basketIntoPrise span {
+	font-weight: 700;
+}
+.removeBnt{
+	opacity: 0.5;
+	transition: 0.20s ease-in-out;
+	cursor: pointer;
+}
+.removeBnt:hover{
+	opacity: 1;
+}
+
+.total {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 20px 0;
+}
+
+.total div {
+	flex: 1;
+	border-bottom: 1px dashed #9c9a9a;
+	margin: 0 1px 0 2px;
+	position: relative;
+	top: -4px;
+}
+.total span {
+	font-size: 16px;
+	line-height: 19px;
+}
+.greenButton img{
+	position: absolute;
+	right: 30px;
+	top: 20px;
+	transition: transform 0.2s ease-in-out;
+}
+
+.greenButton:hover img {
+		transform: translateX(5px);
+	}
+
+
+
+
+.greenButton{
+	position: relative;
+	width: 100%;
+	height: 55px;
+	border-radius: 18px;
+	background: #9DD558;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	color: #FFFFFF;
+	cursor: pointer;
+	transition: background 0.2s ease-in-out;
+}
+
+.totalPrise button:hover{
+	background: lightgreen;
+}
+.totalPrise button:active{
+	background: darkgreen;
+}
+
+
 
 
 
